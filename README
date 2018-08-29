@@ -1,0 +1,2 @@
+In my first developper job interview I was asked to code the & method of Ruby which give the intersection of two arrays.
+Given [1, 1, 1, 4, 5] and [1, 1, 4, 7], intersection must be [1, 1, 4].
