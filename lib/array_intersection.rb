@@ -8,6 +8,7 @@ def intersect(array1, array2)
       next unless el1 == el2
       result << el1
       array2.delete_at(el2index)
+      break
     end
   end
 
