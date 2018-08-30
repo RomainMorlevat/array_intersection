@@ -1,36 +1,13 @@
 def intersect(array1, array2)
-  hash1 = {}
-  hash2 = {}
-
-  array1.each do |el|
-    hash1[el] = if hash1[el]
-                  hash1[el] + 1
-                else
-                  1
-                end
-  end
-
-  array2.each do |el|
-    hash2[el] = if hash2[el]
-                  hash2[el] + 1
-                else
-                  1
-                end
-  end
-
   result = []
 
-  hash1.each do |key, _value|
-    next unless hash2.key?(key)
+  return result if array1.empty? || array2.empty?
 
-    min_value = if hash1[key] > hash2[key]
-                  hash2[key]
-                else
-                  hash1[key]
-                end
-
-    min_value.times do
-      result << key
+  array1.each do |el1|
+    array2.each_with_index do |el2, el2index|
+      next unless el1 == el2
+      result << el1
+      array2.delete_at(el2index)
     end
   end
 
